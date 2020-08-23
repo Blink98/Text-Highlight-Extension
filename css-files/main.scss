@@ -1,0 +1,287 @@
+// Main Colors
+$primary-color: rgb(0, 253, 255);
+$secondary-color: rgb(0, 32, 74);
+$dk-text-color: rgb(255, 255, 255);
+$lt-text-color: rgb(0, 0, 0);
+
+// Special Colors
+$google-blue: rgb(66, 133, 244);
+$light-grey: rgb(134, 134, 134);
+$not-selected: rgb(255, 255, 255);
+// Warning Colors
+$safe-color: rgb(14, 173, 105);
+$hover-safe-color: rgb(15, 141, 86);
+$danger-color: rgb(236, 12, 12);
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    margin: auto;
+    width: 375px;
+    height: fit-content;
+}
+
+.main {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;    
+    align-items: flex-start;
+    max-width: 375px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+
+    // Header
+    .header {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        
+        .brand-logo {
+            height: 2.3rem;
+        }
+    
+        .logout-btn {
+            // height: 2rem;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid $lt-text-color;
+            border-radius: 100px;
+            padding: 0.2rem 1rem;
+            font-size: 1rem;
+            color: $lt-text-color;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &::after {
+                content: url("/Images/icons/log-out.svg");
+                margin: 0.2rem 0 auto 0.6rem;
+                align-self: center;
+                height: 100%;
+            }
+        }
+    }
+    // Form Headers
+    .form-options {
+        margin: 2rem auto;
+        width: 100%;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.09rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 0;
+
+        user-select: none; // Disable user highlight selection
+        
+        .fileLabel, .urlLabel {
+            padding: 0.8rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .fileLabel {
+            border-radius:  50px 0 0 50px;
+        }   
+
+        .urlLabel {
+            border-radius:  0 50px 50px 0;
+        }
+
+        .selected{
+            background: $secondary-color;
+            color: $dk-text-color;
+            box-shadow: 0px 0px 12px $secondary-color;
+            z-index: 5;
+        }
+
+        .not-selected {
+            background: $not-selected;
+            color: $secondary-color;
+            border: 2px solid $secondary-color;
+            z-index: 4;
+        }
+    }
+
+    .form {
+        width: 100%;
+
+        // File Selection
+        .file-selection {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            column-gap: 1rem;
+            font-size: 1.2rem;
+
+            #fileInput {
+                display: none;
+            }
+
+            .browse-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $secondary-color;
+                color: $dk-text-color;
+                border: none;
+                border-radius: 8px;
+                padding: 0.8rem 1rem;
+                transition: ease-in-out all 0.2s;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+            }
+
+            .file-name {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border: 2px dashed $light-grey;
+                border-radius: 8px;
+                color: $light-grey;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+            }
+
+            .file-added {
+                border-color: $lt-text-color;
+                color: $lt-text-color;
+            }
+
+            .close-btn {
+                content: url("../Images/icons/close.svg");
+                transform: scale(1.2);
+                align-self: center;
+                
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+        // URL Input
+        .url-input {
+            width: 100%;
+            display: block;
+            padding: 0.7rem 1rem;
+            font-size: 1.2rem;
+            border: 2px solid $lt-text-color;
+            border-radius: 8px;
+        }
+
+        // Error
+        .error {
+            color: $danger-color;
+            text-align: left;
+            font-size: 1rem;
+            margin: 1rem 1rem 0;
+        }
+
+        // Extract Button
+        .extract-btn {
+            display: block;
+            border: none;
+            border-radius: 100px;
+            padding: 0.8rem;
+            margin: 2rem 0 1rem;
+            background: $safe-color;
+            color: $dk-text-color;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: ease-in-out all 0.2s;
+
+            &:hover {
+                cursor: pointer;
+                background: $hover-safe-color;
+            }
+        } 
+    }
+
+    // Loader
+    .lds-ellipsis {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        margin: auto;
+      }
+      .lds-ellipsis div {
+        position: absolute;
+        top: 33px;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: $secondary-color;
+        animation-timing-function: cubic-bezier(0, 1, 1, 0);
+      }
+      .lds-ellipsis div:nth-child(1) {
+        left: 8px;
+        animation: lds-ellipsis1 0.6s infinite;
+      }
+      .lds-ellipsis div:nth-child(2) {
+        left: 8px;
+        animation: lds-ellipsis2 0.6s infinite;
+      }
+      .lds-ellipsis div:nth-child(3) {
+        left: 32px;
+        animation: lds-ellipsis2 0.6s infinite;
+      }
+      .lds-ellipsis div:nth-child(4) {
+        left: 56px;
+        animation: lds-ellipsis3 0.6s infinite;
+      }
+      @keyframes lds-ellipsis1 {
+        0% {
+          transform: scale(0);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      @keyframes lds-ellipsis3 {
+        0% {
+          transform: scale(1);
+        }
+        100% {
+          transform: scale(0);
+        }
+      }
+      @keyframes lds-ellipsis2 {
+        0% {
+          transform: translate(0, 0);
+        }
+        100% {
+          transform: translate(24px, 0);
+        }
+      }
+    
+    // Hiding element
+    .hide-element {
+        display: none;
+    }
+
+    .show-form {
+        display: block;
+    }
+}

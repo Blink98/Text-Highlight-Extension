@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibly</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css-files/result.css">
+</head>
+<body>
+    <div class="main">
+        <!-- Header -->
+        <div class="header">
+            <div id="backBtn" class="back-btn"></div>
+            <div id="saveBtn" class="save-btn">Save</div>
+        </div>
+        <!-- URL Form -->
+        <div id="noteForm" class="form">
+            <input id="noteTitle" class="title-input text-input" type="text" name="title" placeholder="Title">
+            <textarea id="noteText" class="note-text text-input" name="noteText" placeholder="Text"></textarea>
+        </div>
+        <!-- Footer -->
+        <div class="footer">Want to edit further? Go to <a class="footer-link" href="#">Bibly.com</a></div>
+        
+        <!-- Popup -->
+        <div id="popup" class="popup hide-element">
+            <div class="alert-card">
+                <div id="close-btn" class="close-btn"></div>
+                <p class="warning">Do you want to Save this Note?</p>
+                <div class="alert-btns">
+                    <div id="discardBtn" class="discard-btn">Discard</div>
+                    <div id="innerSaveBtn" class="save-btn">Save</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="/js-files/firebase/firebase-app.js"></script>
+    <script src="/js-files/firebase/firebase-auth.js"></script>
+    <script src="/js-files/firebase/firebase-storage.js"></script>
+    <script src="/js-files/firebase/firebase-firestore.js"></script>
+    <!-- Custom JS -->
+    <script src="../js-files/result.js"></script>
+</body>
+</html>

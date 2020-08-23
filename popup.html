@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibly</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css-files/main.css">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <img class="brand-logo" src="Images/logo.png" alt="Brand Logo">
+            <div id="logoutBtn" class="logout-btn">Logout</div>
+        </div>
+        <!-- Form Headers -->
+        <div class="form-options">
+            <div id="fileLabel" class="fileLabel selected">Extract from File</div>
+            <div id="urlLabel" class="urlLabel not-selected">Extract from URL</div>
+        </div>
+        <!-- File Form -->
+        <div id="fileForm" class="form show-form">
+            <!-- File Selection -->
+            <div class="file-selection">                
+                <input id="fileInput" type="file" name="fileInput">
+                <div id="browseFile" class="browse-btn">Browse</div>
+                <div class="file-name"><span id="fileName">No file chosen, yet...</span><div id="closeBtn" class="close-btn hide-element"></div></div>
+            </div>
+            <!-- Error -->
+            <p id="fileError" class="error hide-element">No Error</p>
+            <!-- Extract Button -->
+            <div id="fileExtractBtn" class="extract-btn">Extract</div>
+        </div>
+        <!-- URL Form -->
+        <div id="urlForm" class="form hide-element">
+            <!-- URL Input -->
+            <input id="urlInput" class="url-input" type="url" name="url-input" placeholder="Please, enter the URL">
+            <!-- Error -->
+            <p id="urlError" class="error hide-element">No Error</p>
+            <!-- Extract Button -->
+            <div id="urlExtractBtn" class="extract-btn">Extract</div>
+        </div>
+        <!-- Loader -->        
+		<div id="loader" class="lds-ellipsis hide-element"><div></div><div></div><div></div><div></div></div>
+    </div>
+    
+    <!-- Firebase -->
+    <script src="/js-files/firebase/firebase-app.js"></script>
+    <script src="/js-files/firebase/firebase-auth.js"></script>
+    <script src="/js-files/firebase/firebase-storage.js"></script>
+    <script src="/js-files/firebase/firebase-firestore.js"></script>
+    <!-- Custom JS -->
+    <script src="/js-files/popup.js"></script>
+</body>
+</html>

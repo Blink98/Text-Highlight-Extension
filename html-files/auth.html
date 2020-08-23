@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibly</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css-files/auth.css">
+    <style>
+        body {user-select: none;}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!-- Header -->
+        <img class="logo" src="/Images/logo.png" alt="Bibly">
+        <div class="logo-cover">
+            <!-- Form Name -->
+            <div class="form-options">
+                <div id="loginLabel" class="login selected">Login</div>
+                <div id="signUpLabel" class="signUp not-selected">Sign Up</div>
+            </div>
+        </div>
+        <!-- Login Form -->
+        <form id="loginForm" class="form show-form">
+            <div id="loginError" class="error hide-element">No Error.</div>
+            <!-- Login Email -->
+            <label class="label" for="loginEmail">Email</label>
+            <input id="loginEmail" class="input" type="email" name="loginEmail" placeholder="Enter your Email address" autocomplete="email">
+            <!-- Login Password -->
+            <label class="label" for="loginPassword">Password</label>
+            <div class="input password-input-container">
+                <input id="loginPassword" class="password-input" type="password" name="loginPassword" id="loginPassword" placeholder="Enter your Password" autocomplete="current-password">
+                <img id="showBtn" class="show-password" src="/Images/icons/show.svg" alt="Show Password Icon">
+            </div>
+            <!-- Login Button -->
+            <div id="login" class="btn">Login</div>
+            <!-- Forgot Password -->
+            <div id="forgotPassword" class="forgotPassword">Forgot Password?</div>
+
+            <!-- Divider -->
+            <!-- <span class="divider">OR</span> -->
+
+            <!-- Google Button -->
+            <!-- <div id="googleBtn" class="google-btn">
+                <img class="google-icon" src="/Images/icons/google-brands.svg" alt="google brand">
+                Login with Google
+            </div> -->
+
+            <!-- Footer -->
+            <!-- <div class="footer">Don’t have an account? <span class="footer-link">Sign up</span></div> -->
+        </form>
+        <!-- SignUp Form -->
+        <form id="signUpForm" class="form hide-element">
+            <div id="signUpError" class="error hide-element">No Error.</div>
+            <!-- SignUP Email -->
+            <label class="label" for="signUpEmail">Email</label>
+            <input id="signUpEmail" class="input" type="email" name="signUpEmail" placeholder="Enter your Email address" autocomplete="email">
+            <!-- signUp Password -->
+            <label class="label" for="signUpPassword">Password</label>
+            <div class="input password-input-container">
+                <input id="signUpPassword" class="password-input" type="password" name="signUpPassword" id="signUpPassword" placeholder="Enter your Password" autocomplete="new-password">
+                <img id="showBtn" class="show-password" src="/Images/icons/show.svg" alt="Show Password Icon">
+            </div>
+            <!-- signUp Button -->
+            <div id="signUp" class="btn">Sign Up</div>
+        </form>
+
+        
+        <!-- Divider -->
+        <span class="divider">OR</span>
+
+        <!-- Google Button -->
+        <div id="googleBtn" class="google-btn">
+            <img class="google-icon" src="/Images/icons/google-brands.svg" alt="google brand">
+            Login with Google
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="/js-files/firebase/firebase-app.js"></script>
+    <script src="/js-files/firebase/firebase-auth.js"></script>
+    <script src="/js-files/firebase/firebase-storage.js"></script>
+    <!-- Custom JS -->
+    <script src="/js-files/auth.js"></script>
+</body>
+</html>

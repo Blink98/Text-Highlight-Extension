@@ -1,0 +1,381 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  margin: auto;
+  width: 375px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  max-width: 375px;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  margin: auto;
+  padding: 1rem;
+}
+
+.main .header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .header .brand-logo {
+  height: 2.3rem;
+}
+
+.main .header .logout-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid black;
+  border-radius: 100px;
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+  color: black;
+}
+
+.main .header .logout-btn:hover {
+  cursor: pointer;
+}
+
+.main .header .logout-btn::after {
+  content: url("/Images/icons/log-out.svg");
+  margin: 0.2rem 0 auto 0.6rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  height: 100%;
+}
+
+.main .form-options {
+  margin: 2rem auto;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.09rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 0;
+          column-gap: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main .form-options .fileLabel, .main .form-options .urlLabel {
+  padding: 0.8rem 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .form-options .fileLabel:hover, .main .form-options .urlLabel:hover {
+  cursor: pointer;
+}
+
+.main .form-options .fileLabel {
+  border-radius: 50px 0 0 50px;
+}
+
+.main .form-options .urlLabel {
+  border-radius: 0 50px 50px 0;
+}
+
+.main .form-options .selected {
+  background: #00204a;
+  color: white;
+  -webkit-box-shadow: 0px 0px 12px #00204a;
+          box-shadow: 0px 0px 12px #00204a;
+  z-index: 5;
+}
+
+.main .form-options .not-selected {
+  background: white;
+  color: #00204a;
+  border: 2px solid #00204a;
+  z-index: 4;
+}
+
+.main .form {
+  width: 100%;
+}
+
+.main .form .file-selection {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.main .form .file-selection #fileInput {
+  display: none;
+}
+
+.main .form .file-selection .browse-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #00204a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  -webkit-transition: ease-in-out all 0.2s;
+  transition: ease-in-out all 0.2s;
+}
+
+.main .form .file-selection .browse-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.main .form .file-selection .file-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px dashed #868686;
+  border-radius: 8px;
+  color: #868686;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.main .form .file-selection .file-added {
+  border-color: black;
+  color: black;
+}
+
+.main .form .file-selection .close-btn {
+  content: url("../Images/icons/close.svg");
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.main .form .file-selection .close-btn:hover {
+  cursor: pointer;
+}
+
+.main .form .url-input {
+  width: 100%;
+  display: block;
+  padding: 0.7rem 1rem;
+  font-size: 1.2rem;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.main .form .error {
+  color: #ec0c0c;
+  text-align: left;
+  font-size: 1rem;
+  margin: 1rem 1rem 0;
+}
+
+.main .form .extract-btn {
+  display: block;
+  border: none;
+  border-radius: 100px;
+  padding: 0.8rem;
+  margin: 2rem 0 1rem;
+  background: #0ead69;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 500;
+  -webkit-transition: ease-in-out all 0.2s;
+  transition: ease-in-out all 0.2s;
+}
+
+.main .form .extract-btn:hover {
+  cursor: pointer;
+  background: #0f8d56;
+}
+
+.main .lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+}
+
+.main .lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #00204a;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.main .lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis1 0.6s infinite;
+          animation: lds-ellipsis1 0.6s infinite;
+}
+
+.main .lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.main .lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  -webkit-animation: lds-ellipsis2 0.6s infinite;
+          animation: lds-ellipsis2 0.6s infinite;
+}
+
+.main .lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  -webkit-animation: lds-ellipsis3 0.6s infinite;
+          animation: lds-ellipsis3 0.6s infinite;
+}
+
+@-webkit-keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@-webkit-keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(24px, 0);
+            transform: translate(24px, 0);
+  }
+}
+
+.main .hide-element {
+  display: none;
+}
+
+.main .show-form {
+  display: block;
+}
+/*# sourceMappingURL=main.css.map */
